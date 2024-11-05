@@ -4,9 +4,9 @@ from django.shortcuts import render
 from rest_framework import viewsets, permissions
 from django.contrib.auth.models import User
 from .models import Review
-from .serializers import ReviewSerializers, UserSerializers 
+from .serializers import ReviewSerializer, UserSerializer 
 
-class ReviewViewSet(viewSets.ModelViewSet):
+class ReviewViewSet(viewsets.ModelViewSet):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
